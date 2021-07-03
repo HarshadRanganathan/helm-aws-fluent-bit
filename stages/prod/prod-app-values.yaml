@@ -1,0 +1,9 @@
+fullnameOverride: "aws-fluent-bit-application"
+
+cloudWatch:
+  logGroupName: "/aws/eks/eks-fluentbit/application"
+  logStreamPrefix: "prod-"
+
+input:
+  # Pattern specifying a specific log file or multiple ones through the use of common wildcards. 
+  path: "/var/log/containers/*_application_*.log"
