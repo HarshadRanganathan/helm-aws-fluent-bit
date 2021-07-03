@@ -1,4 +1,4 @@
-# helm-aws-fluentbit
+# helm-aws-fluent-bit
 
 Example Helm chart for setting up Fluentbit in your EKS cluster.
 
@@ -62,3 +62,13 @@ metadata:
     eks.amazonaws.com/role-arn: arn:aws:iam::<AWS_ACCOUNT_ID>:role/aws-fluent-bit-rol
 EOF
 ```
+
+
+## Install/Upgrade Chart
+
+Run below commands to install/upgrade the chart.
+
+```bash
+helm upgrade -i aws-fluent-bit-infra . -n fluent-bit --values=stages/shared-values.yaml --values=stages/prod/prod-infra-values.yaml
+```
+
