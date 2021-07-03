@@ -24,7 +24,7 @@ We will be using IRSA (IAM Roles for Service Accounts) to give the required perm
 
 3. Update the trust relationship of the IAM role `aws-fluent-bit-rol` as below replacing the `account_id`, `eks_cluster_id` and `region` with the appropriate values.
 
-This trust relationship allows pods with serviceaccount `cert-manager` in `cert-manager` namespace to assume the role.
+This trust relationship allows pods with serviceaccount `aws-fluent-bit` in `fluent-bit` namespace to assume the role.
 
 ```json
 {
