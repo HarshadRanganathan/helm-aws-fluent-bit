@@ -46,3 +46,19 @@ This trust relationship allows pods with serviceaccount `aws-fluent-bit` in `flu
   ]
 }
 ```
+
+### Service Account
+
+Create a new service account in the `fluent-bit` namespace and associate it with the IAM role which we had created earlier.
+
+```bash
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aws-fluent-bit
+  namespace: fluent-bit
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::<AWS_ACCOUNT_ID>:role/aws-fluent-bit-rol
+EOF
+```
