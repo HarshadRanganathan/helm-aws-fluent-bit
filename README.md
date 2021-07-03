@@ -2,6 +2,12 @@
 
 Example Helm chart for setting up Fluentbit in your EKS cluster.
 
+We install two versions of FluentBit in the cluster -
+
+[1] FluentBit App version for shipping application logs from specific namespaces
+
+[2] FluentBit Infra version for shipping platform logs e.g. prometheus, external dns etc. excluding kube-system logs
+
 ## Pre-requisites
 
 ### Namespace
@@ -70,5 +76,7 @@ Run below commands to install/upgrade the chart.
 
 ```bash
 helm upgrade -i aws-fluent-bit-infra . -n fluent-bit --values=stages/shared-values.yaml --values=stages/prod/prod-infra-values.yaml
+
+helm upgrade -i aws-fluent-bit-app . -n fluent-bit --values=stages/shared-values.yaml --values=stages/prod/prod-app-values.yaml
 ```
 
