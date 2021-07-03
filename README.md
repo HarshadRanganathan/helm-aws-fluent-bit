@@ -8,6 +8,16 @@ We install two versions of FluentBit in the cluster -
 
 [2] FluentBit Infra version for shipping platform logs e.g. prometheus, external dns etc. excluding kube-system & application logs (exported by other FluentBit App instance)
 
+Table of Contents
+=================
+
+   * [helm-aws-fluent-bit](#helm-aws-fluent-bit)
+      * [Pre-requisites](#pre-requisites)
+         * [Namespace](#namespace)
+         * [IAM](#iam)
+         * [Service Account](#service-account)
+      * [Install/Upgrade Chart](#installupgrade-chart)
+
 ## Pre-requisites
 
 ### Namespace
