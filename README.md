@@ -6,7 +6,7 @@ We install two versions of FluentBit in the cluster -
 
 [1] FluentBit App version for shipping application logs from specific namespaces
 
-[2] FluentBit Infra version for shipping platform logs e.g. prometheus, external dns etc. excluding kube-system logs
+[2] FluentBit Infra version for shipping platform logs e.g. prometheus, external dns etc. excluding kube-system & application logs (exported by other FluentBit App instance)
 
 ## Pre-requisites
 
