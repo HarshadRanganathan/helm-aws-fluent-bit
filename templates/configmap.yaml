@@ -38,7 +38,10 @@ data:
         Match               {{ .Values.filter.match }}
         Kube_URL            {{ .Values.filter.kubeURL }}
         Merge_Log           {{ .Values.filter.mergeLog }}
+        {{- if .Values.filter.mergeLogKey }}
         Merge_Log_Key       {{ .Values.filter.mergeLogKey }}
+        {{- end }}
+        Keep_Log            {{ .Values.filter.keepLog }}
         K8S-Logging.Parser  {{ .Values.filter.k8sLoggingParser }}
         K8S-Logging.Exclude {{ .Values.filter.k8sLoggingExclude }}
 
@@ -116,6 +119,9 @@ data:
         {{- if .Values.kinesis.appendNewline }}
         append_newline  {{ .Values.kinesis.appendNewline }}
         {{- end }}
+        {{- if .Values.kinesis.replaceDots }}
+        replace_dots    {{ .Values.kinesis.replaceDots }}
+        {{- end }}
         {{- if .Values.kinesis.dataKeys }}
         data_keys       {{ .Values.kinesis.dataKeys }}
         {{- end }}
@@ -166,6 +172,9 @@ data:
         {{- end }}
         {{- if .Values.elasticsearch.retryLimit }}
         Retry_Limit     {{ .Values.elasticsearch.retryLimit }}
+        {{- end }}
+        {{- if .Values.elasticsearch.replaceDots }}
+        Replace_Dots    {{ .Values.elasticsearch.replaceDots }}
         {{- end }}
 {{- end }}
 
