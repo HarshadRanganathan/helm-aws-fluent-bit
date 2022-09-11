@@ -6,4 +6,5 @@ cloudWatch:
 
 input:
   # Pattern specifying a specific log file or multiple ones through the use of common wildcards.
-  exclude_path: "/var/log/containers/*_application_*.log,/var/log/containers/*_kubernetes-dashboard_*.log"
+  extraInputs: |
+    Exclude_Path     /var/log/containers/*_application_*.log,/var/log/containers/*_kubernetes-dashboard_*.log
