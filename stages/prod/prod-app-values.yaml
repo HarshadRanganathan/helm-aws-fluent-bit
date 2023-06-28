@@ -4,6 +4,11 @@ cloudWatch:
   logGroupName: "/aws/eks/eks-fluentbit/application"
   logStreamPrefix: "prod-app-"
 
+s3:
+  enabled: true
+  bucket: "prod-us-east-1"  
+  s3_key_format: "/applicationlogs/service=eks/cluster=prod-cluster/application/%Y/%m/%d/%H/%M_%S/$TAG_$UUID.gz"
+
 input:
   # Pattern specifying a specific log file or multiple ones through the use of common wildcards. 
   path: "/var/log/containers/*_application_*.log"
