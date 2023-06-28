@@ -1,5 +1,6 @@
 cloudWatch:
   logRetentionDays: 30
+  enabled: false
 serviceAccount:
   create: false
   name: aws-fluent-bit 
