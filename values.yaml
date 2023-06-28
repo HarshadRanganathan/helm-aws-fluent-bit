@@ -126,6 +126,21 @@ elasticsearch:
   # extraOutputs: |
   #   Index = my-index
 
+s3:
+  enabled: false
+  match: "*"
+  region: "us-east-1"
+  total_file_size: 10M
+  upload_timeout: 5m
+  use_put_object: "on"
+  s3_key_format_tag_delimiters: ".-"
+  compression: "gzip" 
+# additionalOutputs: |
+#   [OUTPUT]
+#     Name file
+#     Format template
+#     Template {time} used={Mem.used} free={Mem.free} total={Mem.total}
+
 # additionalOutputs: |
 #   [OUTPUT]
 #     Name file
